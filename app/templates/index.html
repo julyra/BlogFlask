@@ -1,0 +1,25 @@
+	{% extends 'base.html' %}
+
+	{% block title %} {{ super() }} - Index{% endblock %}
+
+	{% block content %}
+
+<div class="jumbotron">
+        <h1>Bem-vindo ao Toilter!</h1>
+        <p class="lead">Abra uma conta e divirta-se.</p>
+        <p><a class="btn btn-lg btn-success" href="{{ url_for('cadastrar')}}" role="button"> Cadastre-se</a></p>
+      </div>
+
+      <div class="row marketing">
+        <div class="col-lg-6">
+          <h4>Conecte-se!</h4>
+          <p>O Toilter ajuda você a se conectar e compartilhar com as pessoas que fazem parte da sua vida.</p>
+
+          <h4>Toilter é tão fácil de usar que é difícil de explicar.</h4>
+          <p>Nós fizemos isso muito simples realmente para as pessoas fazerem uma conta e colocar o que quiserem nele.</p>
+
+         
+        </div>
+      </div>
+
+      {% endblock %}

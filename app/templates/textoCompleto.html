@@ -1,0 +1,52 @@
+{% extends "base.html" %} 
+
+<!--{% block styles %}
+<link rel="stylesheet" href="{{url_for('.static', filename='signin.css')}}">
+{% endblock %}
+-->
+{% block content %}
+	<div class="container">
+    	<div class="blog-header">
+	        <h1 class="blog-title">{{ titulo }}</h1>
+	        <p class="lead blog-description">{{ descricao }}</p>
+      	</div>
+
+	    <div class="row">
+
+	        <div class="col-sm-8 blog-main">
+
+	        	<div class="blog-post">
+		            <p class="blog-post-meta" style="font-weight:lighter"> Autores </p>
+
+		            <p>{{ texto }}</p>
+			</div>
+		</div>
+	</div>
+	<br/><br/><br/><br/><br/>
+	<hr>
+	<br/>
+	<h2 class="form-signin-heading">Comentários da Publicação:</h2>
+	<br>
+	<table class="table table-striped">
+        {% for comentario in comentario %}
+            <tr>
+                <td>{{ comentario.comentario }}</td>
+            </tr>
+        {% endfor %} 
+         		
+    </table>
+
+	<div class="container">
+	  <form class="form-signin" method="POST" action="/textoCompleto/{{ id }}">
+	   <table>
+			<tr>
+				<td> Comentário: </td>
+				<td> <input type="text" name="comentario"> </td>
+			</tr>
+		</table>
+	    <span class="input-group-btn">
+	    <button class="btn btn-default" type="submit">Comentar</button>
+	    </span>
+	  </form>
+	</div>
+{% endblock %}

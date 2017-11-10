@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %} {{ super() }} - Publicar{% endblock %}
+
+{% block content %}
+    <form action="{{ url_for('publicacoes') }}" method="POST" class="add-entry">
+      <dl>
+        <dt>Titulo:
+        <dd><input type="text" size="30" name="titulo">
+        <dt>Texto:
+        <dd><textarea name="texto" rows="5" cols="40"></textarea>
+        <dt> Coautores:
+        <dd><input type="text" size="30" name="coautores">
+        <dt> Descrição:
+        <dd><input type="text" size="30" name="descricao">
+        <dd><input type="submit" value="Share">
+      </dl>
+    </form>
+{% endblock %}

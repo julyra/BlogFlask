@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %} {{ super() }} - Timeline{% endblock %}
+
+{% block content %}
+
+	</br> <h4> <a href="{{ url_for('publicar')}}"> Escrever Texto </a> </h4> </br>
+
+	<h3> Minhas Postagens: </h3> <hr>
+
+  <ul class="entries">
+  {% for texto in texto %}
+    <li><h2> {{ texto.titulo}}</h2>{{ texto.texto}}</li>
+    <p><a class="btn btn-default" href="/textoCompleto/{{texto.id}}" role="button"> Detalhes &raquo;</a></p>
+  {% else %}
+    <li><em>Unbelievable. No entries here so far</em></li>
+  {% endfor %}
+  </ul>
+{% endblock %}
